@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: nmoraru
+      changes:
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: NUMERIC(19,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: BIGINT
