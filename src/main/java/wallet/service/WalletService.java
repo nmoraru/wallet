@@ -68,4 +68,12 @@ public class WalletService {
 
         return new WalletResponse(wallet.getId(), wallet.getBalance());
     }
+
+    public static class WalletNotFoundException extends RuntimeException {
+        public WalletNotFoundException(String message) { super(message); }
+    }
+
+    public static class InsufficientFundsException extends RuntimeException {
+        public InsufficientFundsException(String message) { super(message); }
+    }
 }
