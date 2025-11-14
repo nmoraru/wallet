@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: nmoraru
+      author: your_name
       changes:
         - createTable:
             tableName: wallets
