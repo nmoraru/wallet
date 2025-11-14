@@ -13,7 +13,10 @@ public class Wallet {
     private UUID id;
 
     @Column(name = "balance", precision = 19, scale = 4)
-    private BigDecimal balance;
+    private BigDecimal balance = BigDecimal.ZERO;
+
+    @Version
+    private Long version;
 
     public Wallet(UUID id, BigDecimal balance) {
         this.id = id;
@@ -38,11 +41,16 @@ public class Wallet {
         this.balance = balance;
     }
 
+    public Long getVersion() { return version; }
+
+    public void setVersion(Long version) { this.version = version; }
+
     @Override
     public String toString() {
         return "Wallet{" +
                 "id=" + id +
                 ", balance=" + balance +
+                ", version=" + version +
                 '}';
     }
 }
